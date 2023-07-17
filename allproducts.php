@@ -46,11 +46,12 @@ $products= [
 </head>
 <body>
 <?php require_once "navbar.php"; ?>
-<div clsss=" row ">
+<div class="container-fluid text-center">
+<div class=" row  container">
 <?php foreach ($products as $key => $value){ ?>
-<div class="col-3">
+<div class="col-4">
     <div class="card " >
-     <img src="./imges/<?php echo ($value['img']) ?>" class="card-img-top" alt="<?php echo  $key ?>">
+     <img src="./imges/<?php echo ($value['img']) ?>" width="100px" height="100px" class="card-img-top" alt="<?php echo  $key ?>">
       <div class="card-body">
        <h5 class="card-title"><?php echo  $key ?></h5>
        <p class="card-text"><?php echo $value['desc'] ?></p>
@@ -60,7 +61,7 @@ $products= [
 </div>
 
 <?php } ?>
-
+</div>
 </div>
 
 <script src="./js/bootstrap.bundle.js"></script>

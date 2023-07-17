@@ -14,11 +14,11 @@ $viewElement="d-none";
 $validusername=$validuemail=$validpassword="";
 $viewerrusername=$viewerruemail=$viewerrpassword="";
 session_start();
-if (isset($_SESSION['err_username'])){
-    $viewElement="d-block";
-    $viewerrusername=$_SESSION['err_username'];
-    $validusername="is-invalid";  
-}
+// if (isset($_SESSION['err_username'])){
+//     $viewElement="d-block";
+//     $viewerrusername=$_SESSION['err_username'];
+//     $validusername="is-invalid";  
+// }
 if (isset($_SESSION['err_uemail'])){
     $viewElement="d-block";
     $viewerruemail=$_SESSION['err_uemail'];
@@ -32,7 +32,7 @@ if (isset($_SESSION['err_password'])){
        
     
 
-$_SESSION['err_username']="";
+// $_SESSION['err_username']="";
 $_SESSION['err_uemail']="";
 $_SESSION['err_password']="";
 
@@ -51,12 +51,12 @@ session_unset();
         </div>
         <div class="text-start ">
             <form method="post" action="./business_logic/handel_login.php">
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <label class="fs-5 " for="username">User name</label>
                     <span class="text-danger ps-4 fs-5 fw-bolder <?php echo  $viewElement  ?> "><?php echo $viewerrusername ?></span>
 
                     <input type="text" class="form-control <?php echo $validusername ?>" id="username" name="username">
-                </div>
+                </div> -->
                 <div class="mb-3">
                     <label class="fs-5" for="uemail">E-mail</label>
                     <label class="text-danger ps-4 fs-5 fw-bolder   <?php echo  $viewElement  ?> "><?php echo $viewerruemail ?></label>
@@ -73,7 +73,7 @@ session_unset();
                         <button class="btn btn-danger" name="loginbtn">Login</button>
                     </div>
                     <div class="m-2 text-center d-inline-block">
-                        <button class="btn btn-danger" name="signupbtn">Sign up</button>
+                        <a href="./signup.php" class="btn btn-danger" name="signupbtn">Sign up</a>
                     </div>
                 </div>
             </form>
